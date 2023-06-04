@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Contact
+@{
     ViewData["Title"] = "Зворотній зв'язок";
 }
 
@@ -12,4 +13,28 @@
         <li>Телефон: <a href="tel:+123456789">+12 345 6789</a></li>
         <li>Email: <a href="mailto:info@mango.com">info@mango.com</a></li>
     </ul>
+
+    <form method="post" asp-controller="Contacts" asp-action="Check">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" />
+        <span asp-validation-for="Surname"></span>
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+
+        <label asp-for="Message"></label>
+        <input asp-for="Message" />
+        <span asp-validation-for="Message"></span>
+
+        <input type="submit" value="Відправити"/>
+    </form>
 </div>
